@@ -46,19 +46,46 @@
     <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\JvSprite.h">
-      <Filter>source</Filter>
+    <ClInclude Include="..\Classes\JvCamera.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvG.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvGroup.h">
+      <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\JvH.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvList.h">
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\JvObject.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\JvPoint.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvQuadTree.h">
+      <Filter>include</Filter>
+    </ClInclude>
     <ClInclude Include="..\Classes\JvRect.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\JvPoint.h">
+    <ClInclude Include="..\Classes\JvSave.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvSprite.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvState.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvTilemap.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JvU.h">
       <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>
@@ -72,16 +99,43 @@
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\JvSprite.cpp">
+    <ClCompile Include="..\Classes\JvCamera.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvG.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvGroup.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvList.cpp">
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\JvObject.cpp">
       <Filter>source</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\JvPoint.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvQuadTree.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
     <ClCompile Include="..\Classes\JvRect.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\JvPoint.cpp">
+    <ClCompile Include="..\Classes\JvSave.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvSprite.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvState.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvTilemap.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JvU.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>

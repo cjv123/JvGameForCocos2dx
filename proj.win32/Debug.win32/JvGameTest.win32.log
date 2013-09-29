@@ -1,9 +1,35 @@
-﻿生成启动时间为 2013/9/27 17:50:19。
-     1>项目“E:\workspace\cocos2d-x-2.1.4\JvGameTest\proj.win32\JvGameTest.win32.vcxproj”在节点 2 上(clean 个目标)。
-     1>_PrepareForClean:
-         正在删除文件“Debug.win32\JvGameTest.win32.lastbuildstate”。
-     1>已完成生成项目“E:\workspace\cocos2d-x-2.1.4\JvGameTest\proj.win32\JvGameTest.win32.vcxproj”(clean 个目标)的操作。
+﻿生成启动时间为 2013/9/29 21:21:04。
+     1>项目“D:\c++\cocos2d-x-2.1.4\JvGameForCocos2dx\proj.win32\JvGameTest.win32.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在对“Debug.win32\JvGameTest.win32.unsuccessfulbuild”执行 Touch 任务。
+       ClCompile:
+         所有输出均为最新。
+       ResourceCompile:
+         所有输出均为最新。
+       ManifestResourceCompile:
+         所有输出均为最新。
+       Link:
+         D:\vs2010\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\c++\cocos2d-x-2.1.4\Debug.win32\JvGameTest.win32.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\c++\cocos2d-x-2.1.4\Debug.win32\\" libcocos2d.lib libExtensions.lib opengl32.lib glew32.lib libCocosDenshion.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug.win32\JvGameTest.win32.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\c++\cocos2d-x-2.1.4\Debug.win32\JvGameTest.win32.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\c++\cocos2d-x-2.1.4\Debug.win32\JvGameTest.win32.lib" /MACHINE:X86 Debug.win32\JvGameTest.res
+         Debug.win32\JvGameTest.win32.exe.embed.manifest.res
+         Debug.win32\AppDelegate.obj
+         Debug.win32\HelloWorldScene.obj
+         Debug.win32\JvCamera.obj
+         Debug.win32\JvG.obj
+         Debug.win32\JvGroup.obj
+         Debug.win32\JvList.obj
+         Debug.win32\JvObject.obj
+         Debug.win32\JvPoint.obj
+         Debug.win32\JvQuadTree.obj
+         Debug.win32\JvRect.obj
+         Debug.win32\JvSave.obj
+         Debug.win32\JvSprite.obj
+         Debug.win32\JvState.obj
+         Debug.win32\JvTilemap.obj
+         Debug.win32\JvU.obj
+         Debug.win32\main.obj
+     1>LINK : fatal error LNK1104: 无法打开文件“libExtensions.lib”
+     1>已完成生成项目“D:\c++\cocos2d-x-2.1.4\JvGameForCocos2dx\proj.win32\JvGameTest.win32.vcxproj”(build 个目标)的操作 - 失败。
 
-生成成功。
+生成失败。
 
-已用时间 00:00:00.07
+已用时间 00:00:00.23

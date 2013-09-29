@@ -38,6 +38,7 @@
     <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
     <IntDir>$(Configuration).win32\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <LibraryPath>..\..\Debug.win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
@@ -133,21 +134,39 @@
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\JvCamera.h" />
+    <ClInclude Include="..\Classes\JvG.h" />
+    <ClInclude Include="..\Classes\JvGroup.h" />
     <ClInclude Include="..\Classes\JvH.h" />
+    <ClInclude Include="..\Classes\JvList.h" />
     <ClInclude Include="..\Classes\JvObject.h" />
     <ClInclude Include="..\Classes\JvPoint.h" />
+    <ClInclude Include="..\Classes\JvQuadTree.h" />
     <ClInclude Include="..\Classes\JvRect.h" />
+    <ClInclude Include="..\Classes\JvSave.h" />
     <ClInclude Include="..\Classes\JvSprite.h" />
+    <ClInclude Include="..\Classes\JvState.h" />
+    <ClInclude Include="..\Classes\JvTilemap.h" />
+    <ClInclude Include="..\Classes\JvU.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\JvCamera.cpp" />
+    <ClCompile Include="..\Classes\JvG.cpp" />
+    <ClCompile Include="..\Classes\JvGroup.cpp" />
+    <ClCompile Include="..\Classes\JvList.cpp" />
     <ClCompile Include="..\Classes\JvObject.cpp" />
     <ClCompile Include="..\Classes\JvPoint.cpp" />
+    <ClCompile Include="..\Classes\JvQuadTree.cpp" />
     <ClCompile Include="..\Classes\JvRect.cpp" />
+    <ClCompile Include="..\Classes\JvSave.cpp" />
     <ClCompile Include="..\Classes\JvSprite.cpp" />
+    <ClCompile Include="..\Classes\JvState.cpp" />
+    <ClCompile Include="..\Classes\JvTilemap.cpp" />
+    <ClCompile Include="..\Classes\JvU.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
