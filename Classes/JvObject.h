@@ -1,7 +1,7 @@
 #ifndef _JVOBJECT_H
 #define _JVOBJECT_H
 
-#include "JvH.h"
+#include "JvRect.h"
 #include <vector>
 using namespace std;
 
@@ -150,7 +150,7 @@ protected:
 	/*是否固定*/
 	bool _fixed;
 	/*位置临时变量*/
-	pointf _point;
+	JvPoint _point;
 	/*指定容器矩形*/
 	JvRect _rect;
 	

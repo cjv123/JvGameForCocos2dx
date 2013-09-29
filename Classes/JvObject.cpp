@@ -1,5 +1,7 @@
 #include "JvObject.h"
 #include "JvCamera.h"
+#include "JvG.h"
+#include "JvU.h"
 
 JvObject::JvObject(double X/* =0 */,double Y/* =0 */,
 				   double Width/* =0 */,double Height/* =0 */):JvRect(X,Y,Width,Width)

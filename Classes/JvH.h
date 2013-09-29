@@ -4,9 +4,10 @@
 #include <cocos2d.h>
 using namespace cocos2d;
 
+#include "JvObject.h"
 #include "JvSprite.h"
 #include "JvPoint.h"
 #include "JvRect.h"
-#include "JvObject.h"
+
 
 #endif

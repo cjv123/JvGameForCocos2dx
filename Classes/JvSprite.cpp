@@ -1,13 +1,13 @@
 #include "JvSprite.h"
 
-JvSprite::JvSprite()
+JvSprite::JvSprite() 
 {
-
+	mJvObject = new JvObject();
 }
 
 JvSprite::~JvSprite()
 {
-
+	delete mJvObject;
 }
 
 
@@ -20,5 +20,11 @@ JvSprite* JvSprite::create()
 	}
 
 	return instance;
+}
+
+void JvSprite::setPosition( const CCPoint& pos )
+{
+	CCSprite::setPosition(pos);
+	
 }
 

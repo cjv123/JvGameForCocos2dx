@@ -11,8 +11,10 @@ public:
 
 	JvSprite* create();
 
-protected:
+	virtual void setPosition( const CCPoint& pos );
 
+protected:
+	JvObject* mJvObject;
 };
 
 #endif
