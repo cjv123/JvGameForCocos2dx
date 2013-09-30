@@ -72,7 +72,7 @@ public:
 	 *@param JvPoint& point,待转换坐标点
 	 *@return pointf
 	 */
-	//void render(JvSprite* ObjectP);
+	void render(JvSprite* jvsprite);
 
 	/**
 	 *震动镜头

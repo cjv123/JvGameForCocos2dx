@@ -1,8 +1,12 @@
 #include "JvSprite.h"
+#include "JvG.h"
+#include "JvU.h"
+#include "JvState.h"
 
 JvSprite::JvSprite() 
 {
 	mJvObject = new JvObject();
+	scheduleUpdate();
 }
 
 JvSprite::~JvSprite()
@@ -22,9 +26,17 @@ JvSprite* JvSprite::create()
 	return instance;
 }
 
-void JvSprite::setPosition( const CCPoint& pos )
+void JvSprite::update( float delta )
 {
-	CCSprite::setPosition(pos);
-	
+	JvG::stateP->camera.render(this);
+
+	CCSprite::update(delta);
 }
+
+JvObject* JvSprite::getJvObject()
+{
+	return mJvObject;
+}
+
+
 

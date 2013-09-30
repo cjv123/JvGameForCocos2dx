@@ -99,73 +99,25 @@ JvRect JvCamera::getCameraRect()
 	return JvRect(x,y,width,height);
 }
 
-/*
-void JvCamera::render(JvSprite* ObjectP)
+
+void JvCamera::render(JvSprite* jvsprite)
 {
-	if (checkInCamera(ObjectP))
+	JvObject* jvobj = jvsprite->getJvObject();
+
+	if (checkInCamera(jvobj))
 	{
-		image_p pixels = ObjectP->getPixels();
-		if (pixels == NULL)
-			return;
+		JvPoint objPoint(jvobj->x,jvobj->y);
+		JvPoint spoint = toScreenPoint(objPoint);
 
-		unsigned int rx = ObjectP->getCaf()*ObjectP->frameWidth;
-		unsigned int ry = 0;
+		spoint.x = (jvobj->scrollFactor.x==0)?jvobj->x:(jvobj->scrollFactor.x*spoint.x);
+		spoint.y = (jvobj->scrollFactor.y==0)?jvobj->y:(jvobj->scrollFactor.y*spoint.y);
 
-	//	printf("%d\n",rx);
-		//JvRect cameraRect = getCameraRect();
-		//printf("sx:%f,sy:%f sw:%f,sh:%f\n",cameraRect.x,cameraRect.y,cameraRect.width,cameraRect.height);
-		
-		unsigned int w = (unsigned int)ObjectP->getPixels()->w;
-		if(rx >= w)
-		{
-			ry = (unsigned int)(rx/w)*ObjectP->frameHeight;
-			rx %= w;
-		}
-
-		DRAWVH drawvh = NGE_FLIP_NONE;
-		if(ObjectP->facing==FACELEFT)
-		{
-			drawvh=NGE_FLIP_H;
-		}
-		else if (ObjectP->facing==FACEDOWN)
-		{
-			drawvh=NGE_FLIP_V;
-		}
-		else if (ObjectP->facing==FACELEFT && ObjectP->facing==FACEDOWN)
-		{
-			drawvh=NGE_FLIP_HV;
-		}
-
-		JvPoint objPoint(ObjectP->x,ObjectP->y);
-		pointf spoint = toScreenPoint(objPoint);
-
-		//printf("screenx:%f,screeny:%f\n",(float)spoint.x,(float)spoint.y);
-
-		spoint.x = (ObjectP->scrollFactor.x==0)?ObjectP->x:(ObjectP->scrollFactor.x*spoint.x);
-		spoint.y = (ObjectP->scrollFactor.y==0)?ObjectP->y:(ObjectP->scrollFactor.y*spoint.y);
-
-		if (ObjectP->angle !=0)
-		{
-			pixels->rcentrex = ObjectP->frameWidth/2;
-			pixels->rcentrey = ObjectP->frameHeight/2;
-			
-			int drawmask = ObjectP->getMask();
-			if (drawmask==0)
-				drawmask = pixels->mask;
-			
-			RenderQuad(pixels,rx,ry,ObjectP->frameWidth,ObjectP->frameHeight,
-				spoint.x-ObjectP->offset.x,spoint.y-ObjectP->offset.y,ObjectP->getScale(),ObjectP->getScale(),
-				ObjectP->angle,drawmask);
-		}
-		else
-		{
-			draw(pixels,rx,ry,ObjectP->frameWidth,ObjectP->frameHeight,
-				spoint.x-ObjectP->offset.x,spoint.y-ObjectP->offset.y,ObjectP->frameWidth*ObjectP->getScale(),
-				ObjectP->frameHeight*ObjectP->getScale(),drawvh,ObjectP->getMask());
-		}
+		JvPoint cocospoint = JvU::JvGamePoint_to_cocos2dPoint(spoint,CCDirector::sharedDirector()->getWinSize().height);
+		jvsprite->setPositionX((float)(cocospoint.x) + jvsprite->getAnchorPoint().x*jvsprite->getContentSize().width);
+		jvsprite->setPositionY((float)(cocospoint.y) - (1.0f-jvsprite->getAnchorPoint().y)*jvsprite->getContentSize().height);
 	}
 }
-*/
+
 
 void JvCamera::shake(double Intensity/* =0.05 */,double Duration/* =0.5 */)
 {

@@ -41,6 +41,9 @@ public:
 	static bool solveYCollision(JvObject* ObjectP1, JvObject* ObjectP2);
 
 	static double random(int Seed = 1);
+
+	static JvPoint cocos2dPoint_to_JvGamePoint(JvPoint& cocos2dpoint, double sh);
+	static JvPoint JvGamePoint_to_cocos2dPoint(JvPoint& jvgamepoint,double sh);
 protected:
 private:
 };

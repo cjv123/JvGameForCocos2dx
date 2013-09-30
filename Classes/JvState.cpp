@@ -1,44 +1,22 @@
 #include "JvState.h"
 #include "JvG.h"
 #include "JvU.h"
+#include "JvSprite.h"
 
 JvState::JvState()
 {
-	_bgColor =0;
+	mStateLayer = CCLayer::create();
+	addChild(mStateLayer);
+
+	camera.init(JvG::width,JvG::height);
+	JvG::camera = &camera;
+
+	scheduleUpdate();
 }
 
 JvState::~JvState()
 {
 
-}
-
-void JvState::create()
-{
-	camera.init(JvG::width,JvG::height);
-	JvG::camera = &camera;
-
-}
-
-void JvState::update()
-{
-	if (JvG::pause)
-	{
-		pause();
-		return;
-	}
-
-	defaultGroup.update();
-	camera.update();
-}
-
-void JvState::render()
-{
-	if (_bgColor!=0)
-	{
-		//FillRect(0,0,JvG::width,JvG::height,_bgColor,DISPLAY_PIXEL_FORMAT_8888);
-	}
-	defaultGroup.render();
-	//camera.renderFlash();
 }
 
 void JvState::collide()
@@ -51,17 +29,30 @@ void JvState::add(JvObject* ObjectP)
 	defaultGroup.add(ObjectP);
 }
 
-void JvState::setBgColor(int Color)
+void JvState::add( JvSprite* jvsprite ,bool isSwitch /*= true*/)
 {
-	_bgColor = Color;
+	JvObject* jvobject = jvsprite->getJvObject();
+	if (isSwitch)
+	{
+		CCRect boundingrect = jvsprite->boundingBox();
+		float cocospointX = (float)boundingrect.getMidX();
+		float cocospointY = (float)boundingrect.getMaxY();
+		JvPoint cocospoint(cocospointX,cocospointY);
+		JvPoint jvgamePoint = JvU::cocos2dPoint_to_JvGamePoint(cocospoint,CCDirector::sharedDirector()->getWinSize().height);
+		jvobject->x = jvgamePoint.x;
+		jvobject->y = jvgamePoint.y;
+		jvobject->width = boundingrect.size.width;
+		jvobject->height = boundingrect.size.height;
+	}
+
+	add(jvobject);
+	mStateLayer->addChild(jvsprite);
 }
 
-void JvState::pause()
+void JvState::update( float delta )
 {
+	JvG::elapsed = delta;
 
+	camera.update();
 }
 
-void JvState::loading()
-{
-	
-}

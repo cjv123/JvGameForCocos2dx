@@ -9,9 +9,11 @@ public:
 	JvSprite();
 	~JvSprite();
 
-	JvSprite* create();
+	static JvSprite* create();
 
-	virtual void setPosition( const CCPoint& pos );
+	virtual void update( float delta );
+
+	JvObject* getJvObject();
 
 protected:
 	JvObject* mJvObject;

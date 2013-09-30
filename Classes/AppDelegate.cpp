@@ -3,6 +3,8 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
+#include "JvG.h"
+#include "StateTest.h"
 
 using namespace CocosDenshion;
 
@@ -29,9 +31,12 @@ bool AppDelegate::applicationDidFinishLaunching()
     // set FPS. the default value is 1.0/60 if you don't call this
     pDirector->setAnimationInterval(1.0 / 60);
 
-    // create a scene. it's an autorelease object
-    CCScene *pScene = HelloWorld::scene();
+	JvG::setGameData(pDirector->getWinSize().width,pDirector->getWinSize().height);
 
+    // create a scene. it's an autorelease object
+    //CCScene *pScene = HelloWorld::scene();
+	CCScene* pScene = new StateTest;
+	pScene->init();
     // run
     pDirector->runWithScene(pScene);
     return true;

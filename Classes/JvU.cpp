@@ -588,3 +588,19 @@ double JvU::random(int Seed /*=1*/)
 	return randdouble;
 #endif
 }
+
+JvPoint JvU::cocos2dPoint_to_JvGamePoint(JvPoint& cocos2dpoint , double sh)
+{
+	JvPoint JvGamePoint;
+	JvGamePoint.x = cocos2dpoint.x;
+	JvGamePoint.y = sh - cocos2dpoint.y;
+	return JvGamePoint;
+}
+
+JvPoint JvU::JvGamePoint_to_cocos2dPoint(JvPoint& jvgamepoint,double sh )
+{
+	JvPoint cocos2dpoint;
+	cocos2dpoint.x = jvgamepoint.x;
+	cocos2dpoint.y = sh - jvgamepoint.y;
+	return cocos2dpoint;
+}

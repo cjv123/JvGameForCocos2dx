@@ -148,6 +148,7 @@
     <ClInclude Include="..\Classes\JvState.h" />
     <ClInclude Include="..\Classes\JvTilemap.h" />
     <ClInclude Include="..\Classes\JvU.h" />
+    <ClInclude Include="..\Classes\StateTest.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
@@ -167,6 +168,7 @@
     <ClCompile Include="..\Classes\JvState.cpp" />
     <ClCompile Include="..\Classes\JvTilemap.cpp" />
     <ClCompile Include="..\Classes\JvU.cpp" />
+    <ClCompile Include="..\Classes\StateTest.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

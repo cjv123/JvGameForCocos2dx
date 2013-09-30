@@ -88,6 +88,9 @@
     <ClInclude Include="..\Classes\JvU.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\StateTest.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -136,6 +139,9 @@
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\JvU.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\StateTest.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
