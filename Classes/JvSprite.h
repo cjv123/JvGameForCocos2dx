@@ -13,6 +13,8 @@ public:
 
 	virtual void update( float delta );
 
+	void updatePosToJvGame();
+
 	JvObject* getJvObject();
 
 protected:

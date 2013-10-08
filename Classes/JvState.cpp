@@ -10,6 +10,7 @@ JvState::JvState()
 
 	camera.init(JvG::width,JvG::height);
 	JvG::camera = &camera;
+	JvG::stateP = this;
 
 	scheduleUpdate();
 }
@@ -29,22 +30,10 @@ void JvState::add(JvObject* ObjectP)
 	defaultGroup.add(ObjectP);
 }
 
-void JvState::add( JvSprite* jvsprite ,bool isSwitch /*= true*/)
+void JvState::add( JvSprite* jvsprite)
 {
 	JvObject* jvobject = jvsprite->getJvObject();
-	if (isSwitch)
-	{
-		CCRect boundingrect = jvsprite->boundingBox();
-		float cocospointX = (float)boundingrect.getMidX();
-		float cocospointY = (float)boundingrect.getMaxY();
-		JvPoint cocospoint(cocospointX,cocospointY);
-		JvPoint jvgamePoint = JvU::cocos2dPoint_to_JvGamePoint(cocospoint,CCDirector::sharedDirector()->getWinSize().height);
-		jvobject->x = jvgamePoint.x;
-		jvobject->y = jvgamePoint.y;
-		jvobject->width = boundingrect.size.width;
-		jvobject->height = boundingrect.size.height;
-	}
-
+	jvsprite->updatePosToJvGame();
 	add(jvobject);
 	mStateLayer->addChild(jvsprite);
 }
@@ -55,4 +44,11 @@ void JvState::update( float delta )
 
 	camera.update();
 }
+
+CCLayer* JvState::getStateLayer()
+{
+	return mStateLayer;
+}
+
+
 

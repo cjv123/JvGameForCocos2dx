@@ -30,10 +30,11 @@ public:
 	 *@return void
 	 */
 	void add(JvObject* ObjectP);
-	void add(JvSprite* ObjectP,bool isSwitch = true);
+	void add(JvSprite* ObjectP);
 
 	virtual void update( float delta );
 
+	CCLayer* getStateLayer();
 protected:
 	int _bgColor;
 	CCLayer* mStateLayer;

@@ -27,8 +27,13 @@ JvSprite* JvSprite::create()
 }
 
 void JvSprite::update( float delta )
-{
-	JvG::stateP->camera.render(this);
+{	
+	if (JvG::stateP)
+	{
+		updatePosToJvGame();
+		mJvObject->update();
+		JvG::stateP->camera.render(this);
+	}
 
 	CCSprite::update(delta);
 }
@@ -36,6 +41,19 @@ void JvSprite::update( float delta )
 JvObject* JvSprite::getJvObject()
 {
 	return mJvObject;
+}
+
+void JvSprite::updatePosToJvGame()
+{
+	CCRect boundingrect = boundingBox();
+	float cocospointX = (float)boundingrect.getMinX();
+	float cocospointY = (float)boundingrect.getMaxY();
+	JvPoint cocospoint(cocospointX,cocospointY);
+	JvPoint jvgamePoint = JvU::cocos2dPoint_to_JvGamePoint(cocospoint,JvG::stateP->getStateLayer()->getContentSize().height);
+	mJvObject->x = jvgamePoint.x;
+	mJvObject->y = jvgamePoint.y;
+	mJvObject->width = boundingrect.size.width;
+	mJvObject->height = boundingrect.size.height;
 }
 
 

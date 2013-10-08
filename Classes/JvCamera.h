@@ -23,6 +23,7 @@ class JvCamera : public JvRect
 {
 public:
 	JvCamera();
+	~JvCamera();
 
 	/**
 	 *¹¹Ôìº¯Êý

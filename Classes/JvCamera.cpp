@@ -312,3 +312,8 @@ void JvCamera::doFollow()
 		
 	}
 }
+
+JvCamera::~JvCamera()
+{
+
+}
